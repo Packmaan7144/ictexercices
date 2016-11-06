@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<script>
+	function Calculate(){
+	 var x1 = document.getElementById('number1').value;
+	 var y1 = document.getElementById('number2').value;
+	 var x = Number(x1);
+	 var y = Number(y1)
+
+	if (dropOperators.value === "A"){
+	 var result1= x + y;
+	 document.getElementById("result").innerHTML = result1;
+	} else if (dropOperators.value === "B"){
+	 var result2= x - y;
+	 document.getElementById("result").innerHTML = result2;
+	} else if(dropOperators.value === "C"){
+	 var result3= x * y;
+	 document.getElementById("result").innerHTML = result3;
+	}else {
+	  if(y === 0){
+	    var result = "In a division the second number can't be 0.";
+	    document.getElementById("result").innerHTML = result;
+	    setTimeout(Calculate(), 3000);
+	  }else{
+	    var result4= x / y;
+	  document.getElementById("result").innerHTML = result4;
+	  }
+
+	}
+
+	 }
+
+
+
+
+	</script>
+
+	<title>
+	</title>
+</head>
+
+<body>
+	<center>
+		<b>Calculator 1.0</b>
+
+		<p><b><input id='number1' placeholder="First number" type='number'></b>
+		</p>
+
+
+		<div>
+			<b><select id="dropOperators">
+				<option disabled selected>
+					Chose your operator
+				</option>
+
+				<option value="A">
+					Addition
+				</option>
+
+				<option value="B">
+					Substraction
+				</option>
+
+				<option value="C">
+					Multiplication
+				</option>
+
+				<option value="D">
+					Division
+				</option>
+			</select></b>
+		</div>
+
+		<p><input id='number2' placeholder="Second number" type='number'></p>
+
+    <input type='button' onclick='Calculate()' value='Calculate' />
+		<p><span id="result"></span>
+			<p> For some reason when you divide by 0, Chrome crashes, but on Edge it works fine(displays that you can't divide by 0).</p>
+	</center>
+</body>
+</html>

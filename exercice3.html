@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<script>
+	       function Nuts() {
+	           var x1 = document.getElementById('number').value;
+	           var x = Number(x1);
+	           for (i = 0; i < 6; i++) {
+	               if (x >= 0 && x <= 3) {
+	                   var result1 = x * 3;
+	                   document.getElementById("result").innerHTML = result1;
+	               } else if (x >= 4 && x <= 6) {
+	                   var result2 = x + 2;
+	                   document.getElementById("result").innerHTML = result2;
+	               } else if (x >= 7 && x <= 10) {
+	                   var result3 = x * 2;
+	                   document.getElementById("result").innerHTML = result3;
+	               } else if (x < 0) {
+	                   var result4 = x * -1;
+	                   document.getElementById("result").innerHTML = result4;
+	               } else if (x === 100) {
+	                   var result5 = x / x;
+	                   document.getElementById("result").innerHTML = result5;
+	               } else {
+                     var result6 = "Nothing defined for this number yet";
+                     document.getElementById("result").innerHTML = result6;
+                 }
+	           }
+	       }
+	</script>
+
+	<title>
+	</title>
+</head>
+
+<body>
+	<center>
+		<h1>Choose a number and watch it go nuts</h1>
+
+
+		<p><input id='number' placeholder="Your number" type='number'>
+		</p>
+		<button onclick="Nuts()">Make it go nuts</button>
+
+		<p>Result:<span id="result"></span></p>
+
+
+		<p>
+		</p>
+
+
+		<h2>Try to figure out what happens there</h2>
+
+
+		<p>
+		</p>
+	</center>
+</body>
+</html>
